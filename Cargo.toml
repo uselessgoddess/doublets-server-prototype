@@ -1,0 +1,13 @@
+[package]
+name = "doublets-server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+async-std = "1.10.0"
+async-graphql = "3.0.23"
+async-graphql-actix-web = "3.0.23"
+actix-web = "4.0.0-beta.21"
+tokio = { version = "1.15.0", features = ["full"] }
+
+doublets = { path = "C:/Users/X/CLionProjects/Data.Doublets/rust" }
