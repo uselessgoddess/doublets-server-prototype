@@ -2,6 +2,7 @@ use crate::model::*;
 use crate::LinksCtx;
 use async_graphql::{ComplexObject, Context, InputObject, Object, Result, SimpleObject};
 use doublets::doublets::ILinks;
+use std::default::default;
 use std::string::String;
 
 #[derive(Debug)]
@@ -84,46 +85,10 @@ impl MutationRoot {
             let from_id = link.to_id.unwrap();
             let id = links.get_or_create(from_id, to_id)?;
             vec.push(Links {
-                _by_group: vec![],
-                _by_group_aggregate: MpAggregate {
-                    aggregate: None,
-                    nodes: vec![],
-                },
-                _by_item: vec![],
-                _by_item_aggregate: MpAggregate {
-                    aggregate: None,
-                    nodes: vec![],
-                },
-                _by_path_item: vec![],
-                _by_path_item_aggregate: MpAggregate {
-                    aggregate: None,
-                    nodes: vec![],
-                },
-                _by_root: vec![],
-                _by_root_aggregate: MpAggregate {
-                    aggregate: None,
-                    nodes: vec![],
-                },
-                bool_exp: None,
-                from: Box::new(None),
                 from_id: Some(from_id),
                 id,
-                r#in: vec![],
-                in_aggregate: LinksAggregate {
-                    aggregate: None,
-                    nodes: vec![],
-                },
-                number: None,
-                out: vec![],
-                out_aggregate: LinksAggregate {
-                    aggregate: None,
-                    nodes: vec![],
-                },
-                string: None,
-                to: Box::new(None),
                 to_id: Some(to_id),
-                r#type: Box::new(None),
-                type_id: 0,
+                ..default()
             });
         }
         Ok(LinksMutationResponse {

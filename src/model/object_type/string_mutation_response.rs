@@ -2,7 +2,7 @@ use crate::model::String;
 
 use crate::model::*;
 use async_graphql::{ComplexObject, InputObject, Object, SimpleObject};
-#[derive(Debug, SimpleObject)]
+#[derive(Debug, Default, SimpleObject)]
 // todo: #[graphql(complex)]
 #[graphql(name = "string_mutation_response")]
 pub struct StringMutationResponse {

@@ -5,7 +5,7 @@ use crate::model::{
 };
 use async_graphql::{ComplexObject, InputObject, Object, SimpleObject};
 
-#[derive(Debug, SimpleObject)]
+#[derive(Debug, Default, SimpleObject)]
 // todo: #[graphql(complex)]
 #[graphql(name = "subscription_root")]
 pub struct SubscriptionRoot {

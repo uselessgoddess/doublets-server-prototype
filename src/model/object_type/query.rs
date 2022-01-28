@@ -3,7 +3,7 @@ use super::super::object_type::j_w_t_output::JWTOutput;
 use crate::model::*;
 use async_graphql::{ComplexObject, InputObject, Object, SimpleObject};
 use std::string::String;
-#[derive(Debug, SimpleObject)]
+#[derive(Debug, Default, SimpleObject)]
 // todo: #[graphql(complex)]
 #[graphql(name = "Query")]
 pub struct Query {

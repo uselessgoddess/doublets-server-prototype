@@ -3,7 +3,7 @@ use crate::model::{Number, NumberAggregateFields};
 use async_graphql::{ComplexObject, InputObject, Object, SimpleObject};
 
 use std::string::String;
-#[derive(Debug, SimpleObject)]
+#[derive(Debug, Default, SimpleObject)]
 // todo: #[graphql(complex)]
 #[graphql(name = "number_aggregate")]
 pub struct NumberAggregate {

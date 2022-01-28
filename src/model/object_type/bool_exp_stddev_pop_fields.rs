@@ -1,7 +1,7 @@
 use crate::model::*;
 use async_graphql::{ComplexObject, InputObject, Object, SimpleObject};
 use std::string::String;
-#[derive(Debug, SimpleObject)]
+#[derive(Debug, Default, SimpleObject)]
 // todo: #[graphql(complex)]
 #[graphql(name = "bool_exp_stddev_pop_fields")]
 pub struct BoolExpStddevPopFields {

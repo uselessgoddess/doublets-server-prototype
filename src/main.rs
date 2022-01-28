@@ -1,4 +1,5 @@
 #![feature(never_type)]
+#![feature(default_free_fn)]
 
 mod model;
 

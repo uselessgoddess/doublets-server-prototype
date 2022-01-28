@@ -3,7 +3,7 @@ use crate::model::Bigint;
 use crate::model::*;
 use async_graphql::{ComplexObject, InputObject, Object, SimpleObject};
 use std::string::String;
-#[derive(Debug, SimpleObject)]
+#[derive(Debug, Default, SimpleObject)]
 // todo: #[graphql(complex)]
 #[graphql(name = "bool_exp_sum_fields")]
 pub struct BoolExpSumFields {

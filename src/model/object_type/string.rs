@@ -4,7 +4,7 @@ use crate::model::*;
 use async_graphql::{ComplexObject, InputObject, Object, SimpleObject};
 
 use std::string::String as StdString;
-#[derive(Debug, SimpleObject)]
+#[derive(Debug, Default, SimpleObject)]
 // todo: #[graphql(complex)]
 #[graphql(name = "string")]
 pub struct String {

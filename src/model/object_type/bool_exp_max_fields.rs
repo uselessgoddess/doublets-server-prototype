@@ -2,7 +2,7 @@ use crate::model::Bigint;
 use async_graphql::SimpleObject;
 
 use std::string::String;
-#[derive(Debug, SimpleObject)]
+#[derive(Debug, Default, SimpleObject)]
 // todo: #[graphql(complex)]
 #[graphql(name = "bool_exp_max_fields")]
 pub struct BoolExpMaxFields {

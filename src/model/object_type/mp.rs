@@ -3,7 +3,7 @@ use crate::model::{Bigint, Links, MpAggregate};
 use async_graphql::{ComplexObject, InputObject, Object, SimpleObject};
 
 use std::string::String;
-#[derive(Debug, SimpleObject)]
+#[derive(Debug, Default, SimpleObject)]
 // todo: #[graphql(complex)]
 #[graphql(name = "mp")]
 pub struct Mp {
