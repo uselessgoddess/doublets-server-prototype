@@ -1,6 +1,6 @@
 use crate::model::*;
-use async_graphql::{ComplexObject, InputObject, Object, SimpleObject};
-use std::string::String;
+use async_graphql::{InputObject};
+
 #[derive(InputObject, Debug)]
 #[graphql(name = "float8_comparison_exp")]
 pub struct Float8ComparisonExp {

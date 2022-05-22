@@ -1,6 +1,6 @@
 use crate::model::*;
-use async_graphql::{ComplexObject, InputObject, Object, SimpleObject};
-use std::string::String;
+use async_graphql::{InputObject};
+
 #[derive(InputObject, Debug)]
 #[graphql(name = "number_aggregate_order_by")]
 pub struct NumberAggregateOrderBy {

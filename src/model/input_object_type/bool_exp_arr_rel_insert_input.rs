@@ -1,6 +1,6 @@
 use crate::model::*;
-use async_graphql::{ComplexObject, InputObject, Object, SimpleObject};
-use std::string::String;
+use async_graphql::{InputObject};
+
 #[derive(InputObject, Debug)]
 #[graphql(name = "bool_exp_arr_rel_insert_input")]
 pub struct BoolExpArrRelInsertInput {

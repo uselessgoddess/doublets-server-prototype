@@ -1,6 +1,6 @@
 use crate::model::*;
-use async_graphql::{ComplexObject, InputObject, Object, SimpleObject};
-use std::string::String;
+use async_graphql::{InputObject};
+
 #[derive(InputObject, Debug)]
 #[graphql(name = "links_stddev_samp_order_by")]
 pub struct LinksStddevSampOrderBy {

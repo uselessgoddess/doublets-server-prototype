@@ -1,7 +1,7 @@
 use crate::model::*;
-use async_graphql::{ComplexObject, InputObject, Object, SimpleObject};
+use async_graphql::{SimpleObject};
 
-use std::string::String;
+
 #[derive(Debug, Default, SimpleObject)]
 // todo: #[graphql(complex)]
 #[graphql(name = "bool_exp_aggregate")]

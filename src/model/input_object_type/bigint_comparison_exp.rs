@@ -1,8 +1,8 @@
 use crate::model::Bigint;
-use crate::model::*;
-use async_graphql::{ComplexObject, InputObject, Object, SimpleObject};
 
-use std::string::String;
+use async_graphql::{InputObject};
+
+
 #[derive(InputObject, Debug)]
 #[graphql(name = "bigint_comparison_exp")]
 pub struct BigintComparisonExp {

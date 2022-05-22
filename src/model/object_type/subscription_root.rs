@@ -1,9 +1,9 @@
-use crate::model::*;
+
 use crate::model::{
     BoolExp, BoolExpAggregate, Links, LinksAggregate, Mp, MpAggregate, Number, NumberAggregate,
     String, StringAggregate,
 };
-use async_graphql::{ComplexObject, InputObject, Object, SimpleObject};
+use async_graphql::{SimpleObject};
 
 #[derive(Debug, Default, SimpleObject)]
 // todo: #[graphql(complex)]

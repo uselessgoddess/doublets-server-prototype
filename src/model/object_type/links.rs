@@ -1,7 +1,7 @@
-use crate::model::*;
+
 use crate::model::{Bigint, LinksAggregate};
 use crate::model::{BoolExp, Mp, MpAggregate, Number};
-use async_graphql::{ComplexObject, InputObject, Object, SimpleObject};
+use async_graphql::{SimpleObject};
 
 use std::string::String;
 #[derive(Debug, Default, SimpleObject)]

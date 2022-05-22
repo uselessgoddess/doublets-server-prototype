@@ -1,6 +1,6 @@
-use crate::model::*;
-use async_graphql::{ComplexObject, InputObject, Object, SimpleObject};
-use std::string::String;
+
+use async_graphql::{SimpleObject};
+
 #[derive(Debug, Default, SimpleObject)]
 // todo: #[graphql(complex)]
 #[graphql(name = "bool_exp_var_pop_fields")]

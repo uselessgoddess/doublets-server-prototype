@@ -1,9 +1,9 @@
 use crate::model::*;
 use crate::LinksCtx;
-use async_graphql::{ComplexObject, Context, InputObject, Object, Result, SimpleObject};
+use async_graphql::{Context, Object, Result};
 use doublets::Doublets;
 use std::default::default;
-use std::string::String;
+
 
 #[derive(Debug)]
 pub struct MutationRoot {
@@ -76,7 +76,7 @@ impl MutationRoot {
         &self,
         ctx: &Context<'_>,
         #[graphql(name = "objects")] objects: Vec<LinksInsertInput>,
-        #[graphql(name = "on_conflict")] on_conflict: Option<LinksOnConflict>,
+        #[graphql(name = "on_conflict")] _on_conflict: Option<LinksOnConflict>,
     ) -> Result<LinksMutationResponse> {
         let mut links = ctx.data_unchecked::<LinksCtx>().write().await;
         let mut vec = Vec::new();
