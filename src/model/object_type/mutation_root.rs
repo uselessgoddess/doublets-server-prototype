@@ -1,7 +1,7 @@
 use crate::model::*;
 use crate::LinksCtx;
 use async_graphql::{ComplexObject, Context, InputObject, Object, Result, SimpleObject};
-use doublets::doublets::ILinks;
+use doublets::Doublets;
 use std::default::default;
 use std::string::String;
 

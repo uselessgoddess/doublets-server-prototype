@@ -10,13 +10,13 @@ use async_graphql::http::{playground_source, GraphQLPlaygroundConfig};
 use async_graphql::{EmptyMutation, EmptySubscription};
 use async_graphql_actix_web::{GraphQLRequest, GraphQLResponse};
 use async_std::sync::{Arc, RwLock};
-use doublets::doublets::mem::splited;
-use doublets::mem::FileMappedMem;
+use doublets::mem::{splited, FileMappedMem};
 use std::collections::HashMap;
 use std::error::Error;
+use std::fs::File;
 use std::mem::MaybeUninit;
 
-pub type LinksCtx = Arc<RwLock<splited::Links<Bigint, FileMappedMem, FileMappedMem>>>;
+pub type LinksCtx = Arc<RwLock<splited::Store<Bigint, FileMappedMem, FileMappedMem>>>;
 type Schema = async_graphql::Schema<model::QueryRoot, model::MutationRoot, EmptySubscription>;
 
 async fn index(schema: web::Data<Schema>, req: GraphQLRequest) -> GraphQLResponse {
@@ -37,9 +37,21 @@ async fn main() -> Result<(), Box<dyn Error>> {
         model::MutationRoot {},
         EmptySubscription,
     )
-    .data::<LinksCtx>(Arc::new(RwLock::new(splited::Links::<Bigint, _, _>::new(
-        FileMappedMem::new("data.links")?,
-        FileMappedMem::new("index.links")?,
+    .data::<LinksCtx>(Arc::new(RwLock::new(splited::Store::<Bigint, _, _>::new(
+        FileMappedMem::new(
+            File::options()
+                .create(true)
+                .read(true)
+                .write(true)
+                .open("db.links")?,
+        )?,
+        FileMappedMem::new(
+            File::options()
+                .create(true)
+                .read(true)
+                .write(true)
+                .open("db.links")?,
+        )?,
     )?)))
     .finish();
 
